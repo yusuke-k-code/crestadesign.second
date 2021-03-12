@@ -1,0 +1,40 @@
+// アクセント色
+$color-accent-black: #282F35;
+$color-accent: #F7D43F;
+
+// テキスト色
+$color-text-black: #171717;
+$color-text-white: #FFF;
+$color-text-subTitle-white: rgba(255, 255, 255, .1);
+$color-text-subTitle-black: rgba(23, 23, 23, .05);
+
+// 背景色
+$color-bg: #FFF;
+$color-bg-header: $color-accent-black;
+$color-bg-footer: ＃FFF;
+$color-bg-drawer: $color-accent-black;
+$color-bg-button: $color-accent;
+
+// レイアウト幅
+$layout-inner-width: 1200px;
+$contact-inner-width: 700px;
+$header-height: 96px;
+
+// ブレークポイント
+$breakpoints: (
+    sm: 'screen and (max-width: 559px)',
+    md: 'screen and (min-width: 560px)', //TAB想定 560〜959px（〜559pxがSP想定）
+    lg: 'screen and (min-width: 960px)', //PC想定 960〜コンテンツ幅−1px
+    xl: 'screen and (min-width: #{$layout-inner-width})', //PC想定 コンテンツ幅以上
+);
+
+// 階層
+$layer: (
+    drawer-btn: 35, //ドロワーボタン
+    drawer-menu: 30, //ドロワーメニュー
+    drawer-overlay: 25, //ドロワーメニュー背景のオーバーレイ
+    header: 20, // ヘッダー
+    footer: 10, // フッター
+    fv-text: 10, // fvのテキスト
+    default: 1,
+);

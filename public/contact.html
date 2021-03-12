@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- prefix属性でOGP宣言 -->
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- SPブラウザでのリンク自動変換機能の制御 -->
+    <meta name="format-detection" content="email=no,telephone=no,address=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cresta Design｜コーディング中級編</title>
+    <meta name="description" content="クリ★スタさんが提供されているXDデザインカンプを元にコーディング。">
+
+    <!-- ここからOGP -->
+    <meta property="og:url" content="https://yusuke-k-code.github.io/crestadesign.second/public/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="XDデザインカンプからコーディング">
+    <meta property="og:description" content="クリ★スタさんが提供されているXDデザインカンプを元にコーディング。Sass＋BEM・Sass分割管理・レスポンシブ・問合せフォームとGoogleフォーム紐付け・ブレイクポイントはmin-widthで指定してSPファーストでコーディング・Swiper.js・jQuery。所要時間：10時間（稼働2日）※初のSPファーストでのレスポンシブに3時間">
+    <meta property="og:site_name" content="Cresta Design｜2nd">
+    <meta property="og:image" content="https://yusuke-k-code.github.io/crestadesign.second/public/assets/img/thumbnail.png">
+    <!-- Twitter設定 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@coding_days">
+    <!-- //OGPここまで -->
+    
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico">
+    <!-- swiper -->
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header id="js-header" class="header">
+        <div class="header__inner">
+            <h1 class="header__logo"><a href="index.html" class="header__logo-link">Cresta Design</a></h1>
+
+            <!-- ナビゲーション -->
+            <nav class="header__nav" aria-label="サイト内のメニュー">
+                <ul class="header__nav-lists" id="js-navLists">
+                    <li class="header__nav-list"><a class="header__nav-link" href="index.html#concept">Concept</a></li>
+                    <li class="header__nav-list"><a class="header__nav-link" href="index.html#service">Service</a></li>
+                    <li class="header__nav-list"><a class="header__nav-link" href="index.html#works">Works</a></li>
+                    <li class="header__nav-list"><a class="header__nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- ドロワーメニューボタンー -->
+            <div class="drawer__btn" id="js-drawer__btn">
+                <span class="drawer__btn-bar"></span>
+                <span class="drawer__btn-bar"></span>
+                <span class="drawer__btn-bar"></span>
+            </div>
+            <!-- ドロワーメニューのオーバーレイ部分 -->
+            <div class="drawer__overlay" id="js-drawer__overlay"></div>
+            <!-- ドロワーメニュー -->
+            <nav class="drawer" id="js-drawer" aria-label="サイト内のドロワーメニュー">
+                <ul class="drawer__lists">
+                    <li class="drawer__list">
+                        <a class="drawer__link" href="#">Concept</a>
+                    </li>
+                    <li class="drawer__list">
+                        <a class="drawer__link" href="#">Service</a>
+                    </li>
+                    <li class="drawer__list">
+                        <a class="drawer__link" href="#">Works</a>
+                    </li>
+                    <li class="drawer__list">
+                        <a class="drawer__link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- //ここまでナビゲーション -->
+        </div>
+    </header>
+    <!-- //ここまでヘッダー -->
+
+    <!-- メインコンテンツ -->
+    <main class="main">
+
+        <!-- ContactPage -->
+        <section class="contactPage">
+            <div id="js-fv" class="contactPage__container">
+                <div class="inner">
+                    <h2 class="sectionTitle white">Contact</h2>
+                    <p class="sectionSubTitle white">Contact Us</p>
+                </div>
+            </div>
+            <form id="js-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScCyAF1-8ujP24NWx-4IBhr1OKLNJA6F7SzYkc4AFmrkH3qXg/formResponse" method="post" >
+                <dl class="contactPage__items">
+                    <div class="contactPage__item">
+                        <dt class="contactPage__label"><span>お問い合わせ内容</span></dt>
+                        <dd class="contactPage__input">
+                            <div class="contactPage__checkbox">
+                                <input id="request" type="checkbox" name="entry.715302307" class="contactPage__checkbox-input" value="資料請求">
+                                <label class="contactPage__checkbox-label" for="request">資料請求</label>
+                                <input id="talk" type="checkbox" name="entry.715302307" class="contactPage__checkbox-input" value="電話相談">
+                                <label class="contactPage__checkbox-label" for="talk">お電話でのご相談を希望</label>
+                                <input id="offer" type="checkbox" name="entry.715302307" class="contactPage__checkbox-input" value="申込">
+                                <label class="contactPage__checkbox-label" for="offer">申し込み</label>
+                            </div>
+                        </dd>
+                    </div>
+                    <div class="contactPage__item">
+                        <dt class="contactPage__label"><span>担当者名</span></dt>
+                        <dd class="contactPage__input">
+                            <input type="text" name="entry.316657445" class="contactPage__name" required>
+                        </dd>
+                    </div>
+                    <div class="contactPage__item">
+                        <dt class="contactPage__label"><span>電話番号</span></dt>
+                        <dd class="contactPage__input">
+                            <input type="tel" name="entry.628612472" pattern="[\d\-]*" class="contactPage__phone" required>
+                        </dd>
+                    </div>
+                    <div class="contactPage__item">
+                        <dt class="contactPage__label"><span>メールアドレス</span></dt>
+                        <dd class="contactPage__input">
+                            <input type="email" name="entry.792674493" class="contactPage__mail" required>
+                        </dd>
+                    </div>
+                    <div class="contactPage__item">
+                        <dt class="contactPage__label"><span>その他</span></dt>
+                        <dd class="contactPage__input">
+                            <textarea name="entry.1289928424" class="contactPage__textarea" required></textarea>
+                        </dd>
+                    </div>
+                    <div class="contactPage__submit">
+                        <button type="submit" id="js-submit" class="contactPage__submit-btn">Submit</button>
+                    </div>
+                </dl>
+            </form>
+
+            
+            <div class="message">
+                <div id="js-success" class="message__text">
+                <p>送信完了しました。お問い合わせありがとうございました。<br>登録メールアドレスに確認メールが届きますのでご確認ください。</p>
+                </div>
+                <div id="js-error" class="message__text error">
+                    <p>送信に失敗しました。ページを更新していただき、再度送信してください。</p>
+                </div>
+                <div id="js-backBtn" class="message__btn">
+                    <a href="index.html" class="message__btn-link">Back</a>
+                </div>
+            </div>
+
+
+        </section>
+        <!-- //ここまでContactPage -->
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer">
+        <p class="copyright"><small>©︎cresta.design all rights reserved</small></p>
+    </footer>
+    <!-- //ここまでフッター -->
+
+    <!-- swiper -->
+    <script src="./assets/js/swiper-bundle.min.js" defer></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js" defer></script>
+
+</body>
+</html>

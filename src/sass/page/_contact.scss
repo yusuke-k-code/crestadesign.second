@@ -1,0 +1,205 @@
+/* -------------------------
+contactPage
+------------------------- */
+.contactPage {
+
+    &__container {
+        background: transparent url(../../../public/assets/img/contact-page-bgi@2x.jpg) no-repeat center / cover;
+    }
+    
+    .sectionTitle {
+        line-height: 1em;
+        letter-spacing: kerning(100);
+        text-align: center;
+        padding: 190px 0 44px;
+        
+        @include mq('lg') {
+            padding: 188px 0 20px;
+        }
+    }
+
+    .sectionSubTitle {
+        line-height: 1em;
+        padding: 0 0 72px;
+        
+        @include mq('lg') {
+            padding: 0 0 90px;
+        }
+    }
+
+    &__items {
+        max-width: 700px;
+        margin: 105px 15px 86px;
+        line-height: 1em;
+        
+        @include mq('md') {
+            max-width: 700px;
+            margin: 94px auto 80px;
+            line-height: 1em;
+        }
+    }
+
+    &__item {
+
+        &:not(:first-child) {
+            margin-top: 30px;
+
+            @include mq('lg') {
+                margin-top: 25px;
+            }
+        }
+    }
+
+    &__label {
+        display: block;
+        font-weight: bold;
+        line-height: 1em;
+    }
+
+    &__input {
+        margin-top: 5px;
+    }
+
+    // チェックボックス
+    &__checkbox {
+
+        &-input {
+            display: block;
+            opacity: 0;
+            margin: 0;
+
+            @include mq('md') {
+                display: inline;
+            }
+
+            // チェックした後のアニメーション
+            &:checked + label::before {
+                border: 1px solid red;
+                border-top-color: transparent;
+                border-left-color: transparent;
+                width: 8px;
+                height: 14px;
+                bottom: -4px;
+                transform: rotate(45deg);
+                transform-origin: right;
+            }
+
+            // フォーカスされたらアウトライン表示
+            &:focus + .contactPage__checkbox-label::before  {
+                outline: -webkit-focus-ring-color auto 1px;
+            }
+
+            // フォーカス後にクリックした際のアウトラインを非常時
+            &:focus:checked + .contactPage__checkbox-label::before {
+                outline: none;
+            }
+        }
+        
+        &-label {
+            position: relative;
+            margin-left: 20px;
+
+            @include mq('md') {
+                margin-left: 0;
+            }
+
+            // デフォルトでないチェックボックス
+            &::before {
+                position: absolute;
+                content: "";
+                width: 10px;
+                height: 10px;
+                border: 1px solid #141414;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                left: -20px;
+                transition: all .3s ease 0s;
+            }
+            
+            @include mq('md') {
+                &:not(:last-child) {
+                    margin-right: 20px;
+                }            
+            }
+        }
+    }
+
+    // 入力フォームのレイアウト
+    &__name,
+    &__phone,
+    &__mail,
+    &__textarea {
+        appearance: none;
+        background-color: $color-bg;
+        border: 1px solid #141414;
+        width: 100%;
+        height: 30px;
+        font-size: rem(14);
+        padding: .2em .8em;
+    }
+
+    // テキストエリアの拡張制御
+    &__textarea {
+        resize: vertical;
+        min-height: 171px;
+        max-height: 500px;
+    }
+
+    // Submitボタン
+    &__submit {
+        text-align: center;
+        margin-top: 80px;
+
+        &-btn {
+            border: none;
+            background-color: transparent;
+            font-family: $font-family-en;
+            font-weight: bold;
+            line-height: 59px;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, .1);
+            width: 235px;
+            height: 59px;
+            border-radius: 999px;
+            box-shadow: 0 0 6px #1B1310;
+            cursor: not-allowed;
+
+            &.is-active {
+                @include _hoverBtn;
+                cursor: pointer;
+            }
+        }
+    }
+
+    // Submit後のメッセージ
+    .message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__text {
+            text-align: center;
+            font-weight: bold;
+            line-height: leading(30, 16);
+            margin: 120px 0 40px;
+            display: none;
+    
+            &.error {
+                color: red;
+                display: none;
+            }
+        }
+
+        &__btn {
+            margin-bottom: 120px;
+            display: none;
+        
+            &-link {
+                @include _hoverBtn;
+                display: block;
+            }
+        }
+    }
+    
+}

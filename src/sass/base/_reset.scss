@@ -1,0 +1,66 @@
+/* -------------------------
+リセットCSS
+------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td,
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+    border: none;
+}
+
+li {
+    list-style: none;
+}
+
+header a,
+footer a {
+    text-decoration: none;
+}
+
+input,
+textarea,
+button,
+select {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}

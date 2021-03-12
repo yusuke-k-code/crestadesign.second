@@ -1,0 +1,19 @@
+// メディアクエリー
+@mixin mq($breakpoint: sp) {
+    @media#{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+// z-index
+@mixin z-index($key) {
+    z-index: map-get($layer, $key);
+}
+
+// 三点リーダー
+@mixin reader($clamp) {
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $clamp;
+    overflow: hidden;
+}

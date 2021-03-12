@@ -1,0 +1,187 @@
+/* -------------------------
+BASE（共通）
+------------------------- */
+body {
+    font-size: rem(16);
+    line-height: leading(50, 16);
+    letter-spacing: kerning(50);
+    color: $color-text-black;
+    font-family: $font-family-ja;
+}
+
+/* コンテンツインナー幅設定 */
+.inner {
+    padding: 0 15px;
+    
+    @include mq('lg') {
+        max-width: $layout-inner-width;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+/* sectionTitleの設定 */
+.sectionTitle {
+    font-size: rem(30);
+    font-weight: bold;
+    font-style: italic;
+    line-height: leading(12, 30);
+    letter-spacing: kerning(50);
+    font-family: $font-family-en;
+    color: $color-accent-black;
+    padding: 122px 136px 68px 0;
+    
+    @include mq('md') {
+        font-size: rem(60);
+        line-height: leading(24, 60);
+        padding: 100px 136px 80px 0;
+    }
+    @include mq('lg') {
+        padding: 100px 227px 80px 100px;
+    }
+    
+    &.line {
+        span {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: calc(100% + 29px);
+                transform: translateY(-50%);
+                width: 101px;
+                height: 5px;
+                background-color: $color-accent-black;
+                
+                @include mq('lg') {
+                    left: calc(100% + 27px);
+                    width: 200px;
+                }
+            }
+        }
+    }
+    
+    &.right {
+        text-align: right;
+    }
+    
+    &.white {
+        color: $color-text-white;
+
+        &.line {
+            span {
+                &::after {
+                    background-color: $color-bg;
+                }
+            }
+        }
+    }
+}
+
+/* sectionSubTitleの設定 */
+.sectionSubTitle {
+    font-size: rem(40);
+    font-weight: bold;
+    line-height: leading(67, 40);
+    font-family: $font-family-en;
+    color: $color-text-subTitle-black;
+    padding: 40px 0;
+
+    @include mq('md') {
+        font-size: rem(70);
+    }
+    
+    @include mq('lg') {
+        font-size: rem(90);
+        line-height: leading(150, 90);
+        padding: 56px 0;
+    }
+
+    &.right {
+        text-align: right;
+    }
+
+    &.white {
+        color: $color-text-subTitle-white;
+    }
+}
+
+/* -------------------------
+フェードイン
+------------------------- */
+.fadeIn {
+    opacity: 0;
+    transition: opacity 2s ease .3s;
+
+    &.is-active {
+        opacity: 1;
+    }
+}
+
+.fadeIn-under {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 2.5s ease 0s, opacity 2.5s ease 0s;
+
+    &.is-active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fadeIn-top {
+    transform: translateY(-100px);
+    opacity: 0;
+    transition: transform 2.5s ease 0s, opacity 2.5s ease 0s;
+
+    &.is-active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fadeIn-right {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: transform 2.5s ease 0s, opacity 2.5s ease 0s;
+
+    &.is-active {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.fadeIn-left {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: transform 2.5s ease 0s, opacity 2.5s ease 0s;
+
+    &.is-active {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* -------------------------
+補完クラス
+------------------------- */
+/* lg（PC想定）サイズ以上で非表示 */
+.hidden-lg {
+    @include mq('lg') {
+        display: none;
+    }
+}
+
+/* md（TAB想定）サイズ以上で非表示 */
+.hidden-md {
+    @include mq('md') {
+        display: none;
+    }
+}
+
+/* sm（SP想定）だけで非表示 */
+.hidden-sm {
+    @include mq('sm') {
+        display: none;
+    }
+}

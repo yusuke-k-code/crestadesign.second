@@ -1,0 +1,19 @@
+// font-sizeの自動計算
+@function rem($px) {
+    @return ($px / 16) * 1rem;
+}
+
+// line-heightの自動計算
+@function leading($leading, $font-size) {
+    @return $leading / $font-size;
+}
+
+// letter-spacingの自動計算
+@function kerning($kerning) {
+    @return $kerning / 1000 * 1em;
+}
+
+// backgroundの画像アスペクト比固定（padding-top）
+@function aspect($height, $width) {
+    @return $height / $width * 100%;
+}

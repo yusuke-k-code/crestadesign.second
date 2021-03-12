@@ -1,0 +1,18 @@
+/* -------------------------
+footer
+------------------------- */
+.footer {
+    height: 79px;
+    background-color: $color-bg-footer;
+    @include z-index("footer");
+}
+
+.copyright {
+    width: 100%;
+    line-height: 79px;
+    text-align: center;
+    font-family: $font-family-en;
+    font-size: rem(17);
+    font-weight: bold;
+    color: $color-accent-black;
+}
