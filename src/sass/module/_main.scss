@@ -76,6 +76,8 @@ fv
 Concept
 ------------------------- */
 .concept {
+    overflow: hidden;
+    
     &__heading {
         text-align: center;
         font-size: 5.3vw;
@@ -230,6 +232,8 @@ Works
 Service
 ------------------------- */
 .service {
+    overflow: hidden;
+
     .sectionTitle {
         padding: 122px 136px 68px 15px;
 
