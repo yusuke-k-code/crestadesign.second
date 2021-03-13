@@ -188,7 +188,6 @@ Works
             }
         }
         
-        
         &-link {
             display: block;
             text-decoration: none;
@@ -289,8 +288,8 @@ Service
             font-style: italic;
             line-height: leading(50, 20);
             z-index: 1;
-    
-            @include mq('lg') {
+
+            @include mq('md') {
                 font-size: rem(40);
                 line-height: leading(50, 40);
             }
@@ -320,16 +319,18 @@ Service
             transform-origin: left;            
         }
 
-        &:hover {
-            &::before {
-                transform: scaleX(1);
-                transform-origin: left;
+        @include mq('lg') {
+            &:hover {
+                &::before {
+                    transform: scaleX(1);
+                    transform-origin: left;
+                }
+                &::after {
+                    transform: scaleX(1);
+                    transform-origin: right;
+                }
             }
-            &::after {
-                transform: scaleX(1);
-                transform-origin: right;
-            }
-        }
+        };
     }
 
     .sectionSubTitle {
