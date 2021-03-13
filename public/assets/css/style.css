@@ -877,15 +877,16 @@ Works
   z-index: -1;
 }
 
-.works__btn-link:hover {
-  color: #FFF;
-}
-
-.works__btn-link:hover::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: left;
-          transform-origin: left;
+@media screen and (min-width: 960px) {
+  .works__btn-link:hover {
+    color: #FFF;
+  }
+  .works__btn-link:hover::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
 }
 
 .works .sectionSubTitle {
@@ -972,7 +973,7 @@ Service
   z-index: 1;
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 560px) {
   .service__menu-title {
     font-size: 2.5rem;
     line-height: 1.25;
@@ -1009,18 +1010,19 @@ Service
           transform-origin: left;
 }
 
-.service__menu:hover::before {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-}
-
-.service__menu:hover::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: right;
-          transform-origin: right;
+@media screen and (min-width: 960px) {
+  .service__menu:hover::before {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  .service__menu:hover::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
 }
 
 .service .sectionSubTitle {
@@ -1115,15 +1117,16 @@ Contact
   z-index: -1;
 }
 
-.contact__btn-link:hover {
-  color: #FFF;
-}
-
-.contact__btn-link:hover::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: left;
-          transform-origin: left;
+@media screen and (min-width: 960px) {
+  .contact__btn-link:hover {
+    color: #FFF;
+  }
+  .contact__btn-link:hover::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
 }
 
 .contact .sectionSubTitle {
@@ -1434,15 +1437,16 @@ contactPage
   z-index: -1;
 }
 
-.contactPage__submit-btn.is-active:hover {
-  color: #FFF;
-}
-
-.contactPage__submit-btn.is-active:hover::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: left;
-          transform-origin: left;
+@media screen and (min-width: 960px) {
+  .contactPage__submit-btn.is-active:hover {
+    color: #FFF;
+  }
+  .contactPage__submit-btn.is-active:hover::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
 }
 
 .contactPage .message {
@@ -1520,15 +1524,16 @@ contactPage
   z-index: -1;
 }
 
-.contactPage .message__btn-link:hover {
-  color: #FFF;
-}
-
-.contactPage .message__btn-link:hover::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
-  -webkit-transform-origin: left;
-          transform-origin: left;
+@media screen and (min-width: 960px) {
+  .contactPage .message__btn-link:hover {
+    color: #FFF;
+  }
+  .contactPage .message__btn-link:hover::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
 }
 
 /* -------------------------
