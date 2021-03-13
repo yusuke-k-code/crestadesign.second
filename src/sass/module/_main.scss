@@ -148,6 +148,7 @@ Works
 .works {
     background: transparent url(../../../public/assets/img/works-bgi@2x.jpg) no-repeat top center / cover;
     background-attachment: fixed;
+    overflow: hidden;
 
     &__cards {
         
@@ -175,10 +176,13 @@ Works
                 margin-top: 0;
             }
         }
-        
-        &:hover img {
-            transform: scale(1.1);
+
+        @include mq('lg') {
+            &:hover img {
+                transform: scale(1.1);
+            }
         }
+        
         
         &-link {
             display: block;
@@ -246,25 +250,27 @@ Service
             display: flex;
             width: 100%;
         }
-    }
 
-    &__menu {
-        position: relative;
-        width: 100%;
-        cursor: pointer;
-
-        &:not(:first-child) {
-            margin-top: 30px;
-
-            @include mq('lg') {
-                margin-top: 0;
+        &-link {
+            display: block;
+            
+            &:not(:first-child) {
+                margin-top: 30px;
+        
+                @include mq('lg') {
+                    margin-top: 0;
+                }
             }
         }
-
+    }
+    
+    &__menu {
+        position: relative;
+        
         img {
             width: 960px;
         }
-
+        
         &-title {
             position: absolute;
             top: 50%;
@@ -276,7 +282,7 @@ Service
             font-style: italic;
             line-height: leading(50, 20);
             z-index: 1;
-            
+    
             @include mq('lg') {
                 font-size: rem(40);
                 line-height: leading(50, 40);
@@ -329,6 +335,7 @@ Contact
 ------------------------- */
 .contact {
     background: transparent url(../../../public/assets/img/contact-bgi@2x.jpg) no-repeat top center / cover;
+    overflow: hidden;
 
     .sectionTitle {
         padding: 122px 136px 100px 0;
@@ -433,9 +440,6 @@ TOPフローティング
         }
     }
 }
-
-
-
 
 
 
