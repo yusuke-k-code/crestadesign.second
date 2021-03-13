@@ -34,15 +34,16 @@
         transition: transform .4s ease-out 0s;
         z-index: -1;
     }
-    
-    &:hover {
-        color: $color-text-white;
-    
-        &::after {
-            transform: scaleX(1);
-            transform-origin: left;
+
+    @include mq('lg') {
+        &:hover {
+            color: $color-text-white;
+        
+            &::after {
+                transform: scaleX(1);
+                transform-origin: left;
+            }
         }
-    
     }
 }
 
