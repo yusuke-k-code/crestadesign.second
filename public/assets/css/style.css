@@ -120,6 +120,10 @@ body {
   }
 }
 
+.sectionTitle.line {
+  overflow: hidden;
+}
+
 .sectionTitle.line span {
   position: relative;
 }
@@ -635,6 +639,10 @@ fv
 /* -------------------------
 Concept
 ------------------------- */
+.concept {
+  overflow: hidden;
+}
+
 .concept__heading {
   text-align: center;
   font-size: 5.3vw;
@@ -742,6 +750,10 @@ Works
   background-attachment: fixed;
 }
 
+.works .inner {
+  overflow: hidden;
+}
+
 @media screen and (min-width: 960px) {
   .works__cards {
     display: -webkit-box;
@@ -782,9 +794,11 @@ Works
   }
 }
 
-.works__card:hover img {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+@media screen and (min-width: 960px) {
+  .works__card:hover img {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 .works__card-link {
@@ -887,6 +901,10 @@ Works
 /* -------------------------
 Service
 ------------------------- */
+.service {
+  overflow: hidden;
+}
+
 .service .sectionTitle {
   padding: 122px 136px 68px 15px;
 }
@@ -918,20 +936,22 @@ Service
   }
 }
 
-.service__menu {
-  position: relative;
-  width: 100%;
-  cursor: pointer;
+.service__menus-link {
+  display: block;
 }
 
-.service__menu:not(:first-child) {
+.service__menus-link:not(:first-child) {
   margin-top: 30px;
 }
 
 @media screen and (min-width: 960px) {
-  .service__menu:not(:first-child) {
+  .service__menus-link:not(:first-child) {
     margin-top: 0;
   }
+}
+
+.service__menu {
+  position: relative;
 }
 
 .service__menu img {
@@ -1012,6 +1032,10 @@ Contact
 ------------------------- */
 .contact {
   background: transparent url(../../../public/assets/img/contact-bgi@2x.jpg) no-repeat top center/cover;
+}
+
+.contact .inner {
+  overflow: hidden;
 }
 
 .contact .sectionTitle {
